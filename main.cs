@@ -1,11 +1,12 @@
 /*
+Ighoise Odigie
+June 7, 2020
+Youtube: https://www.youtube.com/channel/UCud4cJjtCjEwKpynPz-nNaQ?
+Github: https://github.com/Iggy-o
+Preview: https://repl.it/@IghoiseO/cAeSAR-cIPHeR
 Here is some info on Caesar Cipher's: https://en.wikipedia.org/wiki/Caesar_cipher
 */
 using System;
-
-
-
-
 
 namespace encryption
 {
