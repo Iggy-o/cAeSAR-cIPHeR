@@ -36,7 +36,10 @@ namespace encryption
       for (int i = 0; i < passwd.Length; i++) {
         char passwdLetter = passwdArr[i];
         char upperPasswd = char.ToUpper(passwdLetter);
-        if(char.IsLetter(upperPasswd)){
+        if (char.Equals(upperPasswd, ' ')) {
+          newLetter = upperPasswd;
+        }
+        else if(char.IsLetter(upperPasswd)){
           placement = shiftedString.IndexOf(upperPasswd);
           newLetter = letters[placement];
           if (char.IsLower(passwdLetter)) {
@@ -91,7 +94,10 @@ namespace encryption
       for (int i = 0; i < passwd.Length; i++) {
         char passwdLetter = passwdArr[i];
         char upperPasswd = char.ToUpper(passwdLetter);
-        if (char.IsLetter(upperPasswd)) {
+        if (char.Equals(upperPasswd, ' ')) {
+          newLetter = upperPasswd;
+        }
+        else if (char.IsLetter(upperPasswd)) {
           placement = letters.IndexOf(upperPasswd);
           newLetter = shiftedAlphabet[placement];
           if (char.IsLower(passwdLetter)) {
@@ -127,10 +133,10 @@ namespace encryption
 
       //In the following variable I initialize all valid characters for the user password
       string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      string specialCharacters = "1234567890!@#$%^&*-_.+|:? ";
+      string specialCharacters = "1234567890!@#$%^&*-_.+|:?~";
       
       //First the user is asked what they want to do
-      Console.WriteLine("\nDo you have a previous password to decrypt (Y or N): ");
+      Console.WriteLine("\nDo you have a previous encrypted password to decrypt (Y or N): ");
       string isDecrypt = Console.ReadLine();
       isDecrypt = isDecrypt.ToUpper();
       if (string.Equals(isDecrypt, "Y")) {
